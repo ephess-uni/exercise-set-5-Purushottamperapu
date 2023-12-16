@@ -17,5 +17,9 @@ input_file = data_dir / "ex_5_4-data.csv"
 output_file = output_dir / "ex_5_4-processed.csv"
 
 # Process the input data using numpy
-
+aray1=np.loadtxt(input_file)
+for i in range(len(aray1)):
+    if aray1[i]<0:
+        aray1[i]=0
 # Save the result to output_file
+np.savetxt(output_file,aray1, fmt='%.2e')
