@@ -14,12 +14,28 @@ except ImportError:
     from util import get_repository_root
 
 
+
+
 if __name__ == "__main__":
 
     # Use these predefined input / output files
     root_dir = get_repository_root()
     INFILE = root_dir / "data" / "ex_5_2-data.csv"
     OUTFILE = root_dir / "outputs" / "ex_5_2-processed.csv"
+    raw_data = np.loadtxt(INFILE)
+
+    # TODO: remove the mean from raw_data
+    raw_data-=raw_data.mean()
+    x=raw_data.std()
+    processed=raw_data/x
+    # TODO: scale raw_data so that it has a standard devitation
+    # of 1.
+    #
+    # SAVE the processed data to a variable called `processed`
+
+
+    # Here the program saves the processed data to the outfile
+    np.savetxt(OUTFILE, processed, fmt='%.2e')
 
     # Complete the data processing steps using numpy here.
 
