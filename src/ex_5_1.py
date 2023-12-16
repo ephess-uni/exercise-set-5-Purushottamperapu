@@ -12,9 +12,8 @@ def main(infile):
 
 
 if __name__=='__main__':
-    parser=argparse.ArgumentParser(
-    description='This is a program that uses ex_5_0')
+    parser=argparse.ArgumentParser(description='This is a program that uses ex_5_0')
     parser.add_argument('infile',help='Name of the input file')
     args=parser.parse_args()
-    e0.line_count(args.infile)
+    line_count(args.infile)
 
